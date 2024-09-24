@@ -94,7 +94,7 @@ export default function QuranAudioPlayer() {
     setAudioUrl(newAudioUrl);
 
     const tafseer_id = 1;
-    const tafsirUrl = `http://api.quran-tafseer.com/tafseer/${tafseer_id}/${surah}/${ayah}/${ayah}`;
+    const tafsirUrl = `https://api.quran-tafseer.com/tafseer/${tafseer_id}/${surah}/${ayah}/${ayah}`;
 
     try {
       const tafseerResponse = await axios.get(tafsirUrl);
