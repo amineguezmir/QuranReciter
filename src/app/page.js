@@ -189,7 +189,7 @@ export default function QuranAudioPlayer() {
                 <SelectTrigger>
                   <SelectValue placeholder="اختر سورة" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="max-h-60 overflow-y-auto">
                   {surahs.length > 0 ? (
                     surahs.map((surah) => (
                       <SelectItem key={surah.id} value={surah.id}>
