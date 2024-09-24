@@ -94,11 +94,10 @@ export default function QuranAudioPlayer() {
     setAudioUrl(newAudioUrl);
 
     const tafseer_id = 1;
-    const tafsirUrl = `https://api.quran-tafseer.com/tafseer/${tafseer_id}/${surah}/${ayah}/${ayah}`;
+    const tafsirUrl = `/api/tafseer/${tafseer_id}/${surah}?ayah=${ayah}`;
 
     try {
       const tafseerResponse = await axios.get(tafsirUrl);
-
       if (
         Array.isArray(tafseerResponse.data) &&
         tafseerResponse.data.length > 0
@@ -189,7 +188,7 @@ export default function QuranAudioPlayer() {
                 <SelectTrigger>
                   <SelectValue placeholder="اختر سورة" />
                 </SelectTrigger>
-                <SelectContent className="max-h-60 overflow-y-auto">
+                <SelectContent>
                   {surahs.length > 0 ? (
                     surahs.map((surah) => (
                       <SelectItem key={surah.id} value={surah.id}>
